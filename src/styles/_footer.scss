@@ -1,0 +1,39 @@
+.footer {
+  padding-top: 24px;
+  padding-bottom: 16px;
+  color: var(--gray-color);
+  background-color: var(--black-color);
+
+  &__container {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__descr {
+    font-family: "TTFirsNeue";
+    @include Font(400, 14px, 18px);
+  }
+
+  &__text {
+    max-width: 360px;
+  }
+
+  &__social-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__social-text {
+    margin-bottom: 5px;
+    @include Font(400, 16px, 22px);
+  }
+
+  &__social-item:first-child {
+    margin-right: 20px;
+  }
+
+  &__social-svg {
+    width: 30px;
+    height: 30px;
+  }
+}

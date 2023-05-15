@@ -1,0 +1,78 @@
+@import '_variables.scss';
+
+
+
+@mixin Font ($weight, $size, $lh,) {
+  font-weight: $weight;
+font-size: $size;
+line-height: $lh;
+}
+
+@mixin Link ($focus1, $hover1, $active1) {
+
+  &:focus {
+    color: $focus1;
+  }
+
+  &:hover {
+    color: $hover1;
+  }
+
+  &:active {
+    color: $active1;
+  }
+}
+
+@mixin bgLink ($bgfocus1, $bghover1, $bgactive1) {
+
+  &:focus {
+    background-color: $bgfocus1;
+  }
+
+  &:hover {
+    background-color: $bghover1;
+  }
+
+  &:active {
+    background-color: $bgactive1;
+  }
+}
+
+@mixin font-face($font-family, $url, $weight) {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: local('#{$url}'),
+        url('../fonts/#{$url}.woff2') format('woff2'),
+        url('../fonts/#{$url}.woff') format('woff');
+    font-weight: #{$weight};
+    font-display: swap;
+    font-style: normal;
+  }
+}
+
+@mixin btn ($bg-btnColor, $btnColor) {
+  background-color: $bg-btnColor;
+  color: $btnColor;
+}
+
+
+// base оьщая ширина макета
+// @function vw($value, $base: 1920) {Ы
+//   @return $value / $base * 100vw;
+// }
+
+// для моб
+
+// @function vmin($value, $base: 320) {
+//   @return $value / $base * 100vmin
+// }
+
+// Ы
+
+// @mixin arrowBtn{
+//   width: 64px;
+//   height: 64px;
+//   margin-bottom: 20px;
+//   border-radius: 100px;
+//   background-color: $bgColorGreen;
+// }

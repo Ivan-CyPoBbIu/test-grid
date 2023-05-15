@@ -1,0 +1,152 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+@include font-face("Roboto", "Roboto-Regular", 400);
+@include font-face("Roboto", "Roboto-Bold", 700);
+@include font-face("TTFirsNeue", "TTFirsNeue-Regular", 400);
+@include font-face("TTFirsNeue", "TTFirsNeue-Medium", 500);
+@include font-face("TTFirsNeue", "TTFirsNeue-Bold", 700);
+
+body {
+  min-width: 320px;
+  font-family: "Roboto", "sans-serif";
+  font-weight: 400;
+  background-color: #fff;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.title {
+  margin: 0;
+  font-family: "TTFirsNeue";
+  @include Font(700, 24px, 31px);
+}
+
+.form-reset {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px 23px;
+  outline: none;
+  border: none;
+  background-color: #e9e9e9;
+
+  &::placeholder {
+    color: var(--gray-color9);
+  }
+
+  transition: border .3s ease-in-out;
+    &:hover{
+      &::placeholder {
+        color: #ff6e30;
+      }
+    }
+
+    &:focus {
+      border: 1px solid var(--hover-color);
+    }
+}
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.close-btn {
+  width: 23px;
+  height: 23px;
+  border-radius: 100px;
+  background-color: #808080;
+  padding: 4px;
+}
+
+.close-svg {
+  width: 15px;
+  height: 15px;
+}
+
+.stop-scroll {
+  overflow: hidden;
+}
+
+.burger--active{
+  border-radius: 100px;
+}
+
+.burger--active .header__burger-line:nth-child(3) {
+  opacity: 0;
+}
+
+.burger--active .header__burger-line:nth-child(1) {
+  top: 50%;
+  left: 0;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.burger--active .header__burger-line:nth-child(2) {
+  left: 0;
+  top: 50%;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+// .is-outer {
+//   position: relative !important; //stylelint-disable-line declarayion-no-important
+//   left: -9999px !important; //stylelint-disable-line declarayion-no-important
+// }
+
+// .site-container {
+//   overflow: hidden;
+// }
+
+// .for-mobile {
+//   display: none;
+
+//   @include mobile {
+//     display: block;
+//   }
+// }

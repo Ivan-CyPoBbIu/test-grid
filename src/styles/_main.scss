@@ -1,0 +1,377 @@
+
+
+.hero {
+  margin-bottom: 68px;
+
+  &__container {
+    font-size: 0;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 2;
+    gap: 30px;
+  }
+
+  &__item {
+    &:first-child {
+      display: flex;
+      align-items: flex-end;
+      padding: 0 120px 60px 58px;
+      background-image: url(../images/hero1.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      grid-row: 1/3;
+      grid-column: 1/3;
+      color: #fff;
+    }
+
+    &:nth-child(2) {
+      grid-column: 3/5;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 36px;
+    line-height: 104%;
+  }
+
+  &__text {
+    margin-bottom: 3px;
+    @include Font(400, 16px, 19px)
+  }
+
+  &__btn {
+    padding: 16px 22px;
+    @include Font(700, 16px, 19px);
+    @include btn(var(--btnBg-color), inherit);
+    transition: border .3s ease-in-out, background-color .3s ease-in-out;
+    @include bgLink(var(--btnBg-color), var(--hoverBtn-color), var(--active-color));
+    &:focus {
+      border: 3px solid var(--active-color);
+    }
+  }
+
+  &__item-title {
+    margin-bottom: 18px;
+    line-height: 104%;
+  }
+}
+
+// about section
+
+
+.about {
+  margin-bottom: 68px;
+  padding: 30px 0 70px;
+  background-color: var(--black-color);
+
+  &__item-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    color: #fff;
+  }
+
+  &__descr {
+    @include Font(400, 16px, 28px);
+    color: var(--gray-color);
+  }
+
+  &__item:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__wrapper-bg {
+    height: 100%;
+    background-image: url(../images/about-photo.jpg);
+    background-repeat: no-repeat;
+  }
+
+  &__mini-title {
+    margin: 0;
+    margin-bottom: 15px;
+    font-family: "TTFirsNeue";
+    @include Font(400, 24px, 22px);
+    color: #fff;
+  }
+
+  &__form {
+    justify-content: space-between;
+  }
+
+  &__form-input {
+    width: 76%;
+    padding: 15px 23px;
+    background-color: #4a4a4a;
+    outline: none;
+    border: none;
+    &::placeholder {
+      color: #cacaca;
+    }
+    transition: border .3s ease-in-out;
+    &:hover{
+      &::placeholder {
+        color: #ff6e30;
+      }
+    }
+
+    &:focus {
+      border: 1px solid var(--hover-color);
+    }
+  }
+
+  &__form-btn {
+    padding: 15px 22px;
+    @include Font(700, 16px, 19px);
+    @include btn (var(--btnBg-color), #fff);
+    transition: border .3s ease-in-out, background-color .3s ease-in-out;
+    @include bgLink(var(--btnBg-color), var(--hoverBtn-color), var(--active-color));
+    &:focus {
+      border: 3px solid var(--active-color);
+    }
+  }
+}
+
+.project {
+  margin-bottom: 68px;
+
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__gallery {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2);
+    gap: 30px;
+  }
+
+  &__gallery-item {
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:nth-child(-n+3) {
+      grid-column: 2 span;
+    }
+
+    &:nth-child(n+4):nth-child(-n+5) {
+      position: relative;
+      padding: 22px 29px 30px;
+      justify-content: space-between;
+      align-items: start;
+      grid-column: 6 span;
+      color: #fff;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      .project__date {
+        margin-bottom: 3px;
+        color: #fff;
+        background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_41399_382)'%3E%3Cpath d='M11.6666 1.74992H11.0833V0.583252H9.91663V1.74992H4.08329V0.583252H2.91663V1.74992H2.33329C1.69163 1.74992 1.16663 2.27492 1.16663 2.91659V12.2499C1.16663 12.8916 1.69163 13.4166 2.33329 13.4166H11.6666C12.3083 13.4166 12.8333 12.8916 12.8333 12.2499V2.91659C12.8333 2.27492 12.3083 1.74992 11.6666 1.74992ZM11.6666 12.2499H2.33329V4.66658H11.6666V12.2499Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_41399_382'%3E%3Crect width='14' height='14' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+      }
+
+      .project__gallery-descr {
+        max-width: 295px;
+      }
+    }
+
+    &:nth-child(4) {
+      background-image: url(../images/project-image/project4.jpg);
+    }
+
+    &:nth-child(5) {
+      background-image: url(../images/project-image/project5.jpg);
+    }
+
+    &:nth-last-child(-n+2) {
+      grid-column: 3 span;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    margin-bottom: 18px;
+    & img {
+      width: 100%;
+    }
+  }
+
+  &__image-text {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    padding: 6px 14px;
+    @include Font (400, 14px, 16px);
+    color: #fff;
+    background-color: var(--black-color);
+  }
+
+  &__gallery-descr {
+    margin-bottom: 8px;
+    @include Font(400, 16px, 22px);
+  }
+
+  &__date {
+    padding-left: 17px;
+    @include Font (400, 12px, 22px);
+    color: var(--gray-color9);
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_41399_355)'%3E%3Cpath d='M11.6666 1.74992H11.0833V0.583252H9.91663V1.74992H4.08329V0.583252H2.91663V1.74992H2.33329C1.69163 1.74992 1.16663 2.27492 1.16663 2.91659V12.2499C1.16663 12.8916 1.69163 13.4166 2.33329 13.4166H11.6666C12.3083 13.4166 12.8333 12.8916 12.8333 12.2499V2.91659C12.8333 2.27492 12.3083 1.74992 11.6666 1.74992ZM11.6666 12.2499H2.33329V4.66658H11.6666V12.2499Z' fill='%23999999'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_41399_355'%3E%3Crect width='14' height='14' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 16px 13px;
+  }
+
+  &__gallery-title {
+    max-width: 250px;
+    margin: 0;
+    margin-bottom: 6px;
+    font-family: "TTFirsNeue";
+    @include Font(700, 24px, 24px);
+    letter-spacing: 1px;
+  }
+
+  &__gallery-btn {
+    display: inline-block;
+    padding: 14px 21px;
+    border: 3px solid var(--btnBg-color);
+    transition: border .3s ease-in-out, background-color .3s ease-in-out;
+    @include bgLink(var(--hoverBtn-color), var(--btnBg-color), var(--active-color));
+    &:focus {
+      border: 3px solid var(--btnBg-color);
+    }
+  }
+}
+
+.contacts {
+  margin-bottom: 69px;
+
+  &__title {
+    margin-bottom: 17px;
+  }
+
+  &__map-wrapper {
+    position: relative;
+    padding-top: 5px;
+    margin-right: 30px;
+  }
+
+  &__map-btn {
+    position: absolute;
+    top: 22px;
+    left: 370px;
+    z-index: 2;
+  }
+
+  &__descr {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    height: 460px;
+    width: 410px;
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(32, 32, 32, 0.85);;
+    z-index: 1;
+  }
+
+  &__descr-close {
+    display: none;
+  }
+
+  &__map-title {
+    margin: 0;
+    margin-bottom: 5px;
+    font-family: "TTFirsNeue";
+    @include Font (400, 24px, 22px);
+    color: #fff;
+  }
+
+  &__map-adress {
+    max-width: 300px;
+    margin: 0;
+    margin-bottom: 5px;
+    @include Font(400, 16px, 28px);
+    color: var(--gray-color);
+  }
+
+  &__map-tel {
+    padding-left: 20px;
+    font-family: "TTFirsNeue";
+    @include Font(400, 16px, 21px);
+    color: #ff6e30;
+    background-image: url(../images/call.svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+
+  &__maps {
+      // position: relative;
+      width: 850px;
+      height: 460px;
+  }
+
+  &__form-title {
+    margin: 0;
+    margin-bottom: 5px;
+    font-family: "TTFirsNeue";
+    font-style: normal;
+    @include Font(400, 24px, 22px);
+  }
+
+  &__form-descr {
+    margin: 0;
+    margin-bottom: 15px;
+    @include Font(400, 16px, 22px);
+    color: var(--gray-color9);
+  }
+
+  &__form {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  &__form-textarea {
+    height: 150px;
+    resize: none;
+    transition: border .3s ease-in-out;
+    &:hover{
+      &::placeholder {
+        color: #ff6e30;
+      }
+    }
+
+    &:focus {
+      border: 1px solid var(--hover-color);
+    }
+  }
+
+  &__form-btn {
+    padding: 16px 23px;
+    background-color: var(--btnBg-color);
+    @include Font(700, 16px, 19px);
+    color: #fff;
+    transition: border .3s ease-in-out, background-color .3s ease-in-out;
+    @include bgLink(var(--btnBg-color), var(--hoverBtn-color), var(--active-color));
+    &:focus {
+      border: 3px solid var(--active-color);
+    }
+  }
+}
+
+// скрыть копирайт
+[class*="copyrights-pane"] {
+  display: none !important;
+}
+
+// черно белая карта
+[class*="ground-pane"] {
+  filter: grayscale(1);
+}
+
+
